@@ -1,0 +1,75 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Estimote\"><param name=\"android-package\" value=\"com.estimote.sdk.EstimotePlugin\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH_ADMIN\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission-sdk-23 android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<service android:exported=\"false\" android:name=\"com.estimote.sdk.service.BeaconService\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.estimote.sdk.service.BeaconService$ScanAlarmBroadcastReceiver\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.sparta.demo"
+        },
+        "com.estimote.sdk": {
+            "PACKAGE_NAME": "com.sparta.demo"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/com.estimote.sdk/www/estimote.js",
+            "id": "com.estimote.sdk.estimote",
+            "pluginId": "com.estimote.sdk",
+            "clobbers": [
+                "estimote"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-whitelist": "1.2.2",
+        "com.estimote.sdk": "1.1.1"
+    }
+}
