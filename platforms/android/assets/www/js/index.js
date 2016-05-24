@@ -34,7 +34,11 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        window.estimote.startRanging("Testing");
+        var region = {
+            	region: 'Sparta',
+            	 uuid: "e008fa45-c9b4-45e5-b38c-724842906ebc"
+        };
+        window.estimote.startRanging(region);
         
         document.addEventListener('beaconsReceived', app.onBeaconsReceived, false);
     },

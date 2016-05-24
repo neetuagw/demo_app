@@ -44,7 +44,8 @@
                             "xml": "<receiver android:name=\"com.estimote.sdk.service.BeaconService$ScanAlarmBroadcastReceiver\" />",
                             "count": 1
                         }
-                    ]
+                    ],
+                    "/*": []
                 }
             }
         }

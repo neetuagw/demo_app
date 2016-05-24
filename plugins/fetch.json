@@ -10,7 +10,7 @@
     "com.estimote.sdk": {
         "source": {
             "type": "git",
-            "url": "https://github.com/Telerik-Verified-Plugins/Estimote",
+            "url": "https://github.com/Telerik-Verified-Plugins/Estimote.git",
             "subdir": "."
         },
         "is_top_level": true,
